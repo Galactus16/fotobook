@@ -1,0 +1,12 @@
+!!! 5
+%html
+  %head
+    %title Fotobook
+    = stylesheet_link_tag 'default'
+    = javascript_include_tag 'default'
+    = csrf_meta_tags
+
+  %body
+    -flash.each do |name, msg|
+      = content_tag :div, msg, class: [:alert, alert_for(name)]
+    = yield
